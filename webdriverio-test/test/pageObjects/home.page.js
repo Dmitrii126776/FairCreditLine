@@ -1,11 +1,11 @@
 import BasePage from "./Base.page";
 
 class HomePage extends BasePage {
-    get header () {
+    get header() {
         return $('h1');
     }
 
-    get newCreditLine () {
+    get newCreditLine() {
         return $('[href="/line_of_credits/new"]');
     }
 
@@ -13,8 +13,9 @@ class HomePage extends BasePage {
         super.open('/');
     }
 
-    newLineOfCredit(){
+    newLineOfCredit() {
         this.newCreditLine.click();
     }
 }
+
 export default new HomePage();

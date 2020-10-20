@@ -1,5 +1,4 @@
 import BasePage from "./Base.page";
-import {creditPageData} from "../data/createNewCreditData";
 
 class CreateNewCreditPage extends BasePage {
     get header() {
@@ -18,13 +17,21 @@ class CreateNewCreditPage extends BasePage {
         return $('[type="submit"]');
     }
 
-    open(path) {
-      return super.open('/line_of_credits/new');
+    get ErrorMessageTwoEmptyFields() {
+        return browser.$('//h2[contains(text(),"4 errors prohibited this line_of_credit from being")]');
     }
 
-    createNewCredit() {
-        this.CreditAprIF.setValue(creditPageData.creditApr);
-        this.CreditLimitIF.setValue(creditPageData.creditLimit);
+    get ErrorMessageOneEmptyField() {
+        return browser.$('//h2[contains(text(),"2 errors prohibited this line_of_credit from being")]');
+    }
+
+    open(path) {
+        return super.open('/line_of_credits/new');
+    }
+
+    createNewCredit(creditApr, creditLimit) {
+        this.CreditAprIF.setValue(creditApr);
+        this.CreditLimitIF.setValue(creditLimit);
         this.CreateLineOfCreditBtn.click();
     }
 }

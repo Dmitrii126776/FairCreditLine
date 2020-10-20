@@ -1,7 +1,7 @@
 import BasePage from "./Base.page";
 
 class LineOfCreditPage extends BasePage {
-    get notification () {
+    get notification() {
         return $('#notice');
     }
 }
