@@ -25,6 +25,14 @@ class CreateNewCreditPage extends BasePage {
         return browser.$('//h2[contains(text(),"2 errors prohibited this line_of_credit from being")]');
     }
 
+    get CreditLimitFieldBlank() {
+        return browser.$('//li[contains(text(),"Credit limit can\'t be blank")]');
+    }
+
+    get CreditLimitNotNumber() {
+        return browser.$('//li[contains(text(),"Credit limit is not a number")]');
+    }
+
     open(path) {
         return super.open('/line_of_credits/new');
     }
