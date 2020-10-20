@@ -17,12 +17,28 @@ class CreateNewCreditPage extends BasePage {
         return $('[type="submit"]');
     }
 
-    get ErrorMessageTwoEmptyFields() {
+    get FourErrorsMessage() {
         return browser.$('//h2[contains(text(),"4 errors prohibited this line_of_credit from being")]');
     }
 
-    get ErrorMessageOneEmptyField() {
+    get ThreeErrorsMessage() {
+        return browser.$('//h2[contains(text(),"3 errors prohibited this line_of_credit from being")]');
+    }
+
+    get TwoErrorsMessage() {
         return browser.$('//h2[contains(text(),"2 errors prohibited this line_of_credit from being")]');
+    }
+
+    get OneErrorsMessage() {
+        return browser.$('//h2[contains(text(),"1 errors prohibited this line_of_credit from being")]');
+    }
+
+    get AprFieldBlank() {
+        return browser.$('//li[contains(text(),"Apr can\'t be blank")]');
+    }
+
+    get AprNotNumber() {
+        return browser.$('//li[contains(text(),"Apr is not a number")]');
     }
 
     get CreditLimitFieldBlank() {
