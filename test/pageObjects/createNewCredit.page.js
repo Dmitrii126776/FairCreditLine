@@ -1,63 +1,71 @@
-import BasePage from "./Base.page";
+import BasePage from './Base.page';
 
 class CreateNewCreditPage extends BasePage {
-    get header() {
-        return $('h1');
-    }
+  get header() {
+    return $('h1');
+  }
 
-    get CreditAprIF() {
-        return $('#line_of_credit_apr');
-    }
+  get creditAprIF() {
+    return $('#line_of_credit_apr');
+  }
 
-    get CreditLimitIF() {
-        return $('#line_of_credit_credit_limit');
-    }
+  get creditLimitIF() {
+    return $('#line_of_credit_credit_limit');
+  }
 
-    get CreateLineOfCreditBtn() {
-        return $('[type="submit"]');
-    }
+  get createLineOfCreditBtn() {
+    return $('[type="submit"]');
+  }
 
-    get FourErrorsMessage() {
-        return browser.$('//h2[contains(text(),"4 errors prohibited this line_of_credit from being")]');
-    }
+  get fourErrorsMessage() {
+    return browser.$('//h2[contains(text(),"4 errors prohibited this line_of_credit from being")]');
+  }
 
-    get ThreeErrorsMessage() {
-        return browser.$('//h2[contains(text(),"3 errors prohibited this line_of_credit from being")]');
-    }
+  get threeErrorsMessage() {
+    return browser.$('//h2[contains(text(),"3 errors prohibited this line_of_credit from being")]');
+  }
 
-    get TwoErrorsMessage() {
-        return browser.$('//h2[contains(text(),"2 errors prohibited this line_of_credit from being")]');
-    }
+  get twoErrorsMessage() {
+    return browser.$('//h2[contains(text(),"2 errors prohibited this line_of_credit from being")]');
+  }
 
-    get OneErrorsMessage() {
-        return browser.$('//h2[contains(text(),"1 errors prohibited this line_of_credit from being")]');
-    }
+  get oneErrorsMessage() {
+    return browser.$('//h2[contains(text(),"1 error prohibited this line_of_credit from being")]');
+  }
 
-    get AprFieldBlank() {
-        return browser.$('//li[contains(text(),"Apr can\'t be blank")]');
-    }
+  get aprFieldBlank() {
+    return browser.$('//li[contains(text(),"Apr can\'t be blank")]');
+  }
 
-    get AprNotNumber() {
-        return browser.$('//li[contains(text(),"Apr is not a number")]');
-    }
+  get aprNotNumber() {
+    return browser.$('//li[contains(text(),"Apr is not a number")]');
+  }
 
-    get CreditLimitFieldBlank() {
-        return browser.$('//li[contains(text(),"Credit limit can\'t be blank")]');
-    }
+  get creditLimitFieldBlank() {
+    return browser.$('//li[contains(text(),"Credit limit can\'t be blank")]');
+  }
 
-    get CreditLimitNotNumber() {
-        return browser.$('//li[contains(text(),"Credit limit is not a number")]');
-    }
+  get creditLimitNotNumber() {
+    return browser.$('//li[contains(text(),"Credit limit is not a number")]');
+  }
 
-    open(path) {
-        return super.open('/line_of_credits/new');
-    }
+  get negativeNumberApr() {
+    return browser.$('//li[contains(text(),"Apr must be greater than or equal to 0.0")]');
+  }
 
-    createNewCredit(creditApr, creditLimit) {
-        this.CreditAprIF.setValue(creditApr);
-        this.CreditLimitIF.setValue(creditLimit);
-        this.CreateLineOfCreditBtn.click();
-    }
+  get negativeNumberCreditLimit() {
+    return browser.$('//li[contains(text(),"Credit limit must be greater than or equal to 0.0")]');
+  }
+
+  open(path) {
+    return super.open('/line_of_credits/new');
+  }
+
+  createNewCredit(creditApr, creditLimit) {
+    this.creditAprIF.setValue(creditApr);
+    this.creditLimitIF.setValue(creditLimit);
+    this.createLineOfCreditBtn.click();
+  }
 }
 
 export default new CreateNewCreditPage();

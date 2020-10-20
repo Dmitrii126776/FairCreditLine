@@ -1,9 +1,9 @@
-import BasePage from "./Base.page";
+import BasePage from './Base.page';
 
 class LineOfCreditPage extends BasePage {
-    get notification() {
-        return $('#notice');
-    }
+  get notification() {
+    return $('#notice');
+  }
 }
 
 export default new LineOfCreditPage();
