@@ -1,4 +1,4 @@
-const pageData = {
+const homePageData = {
     header : 'Listing Line Of Credits'
 }
-export {pageData};
+export {homePageData};

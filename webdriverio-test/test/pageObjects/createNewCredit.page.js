@@ -1,4 +1,5 @@
 import BasePage from "./Base.page";
+import {creditPageData} from "../data/createNewCreditData";
 
 class CreateNewCreditPage extends BasePage {
     get header() {
@@ -19,6 +20,12 @@ class CreateNewCreditPage extends BasePage {
 
     open(path) {
       return super.open('/line_of_credits/new');
+    }
+
+    createNewCredit() {
+        this.CreditAprIF.setValue(creditPageData.creditApr);
+        this.CreditLimitIF.setValue(creditPageData.creditLimit);
+        this.CreateLineOfCreditBtn.click();
     }
 }
 
