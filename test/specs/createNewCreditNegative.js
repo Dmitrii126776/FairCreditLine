@@ -127,4 +127,36 @@ describe('NEGATIVE TESTS CREATE NEW CREDIT LINE', () => {
       errorMessage.negativeNumberCreditLimit,
     );
   });
+
+  it('should leave empty credit limit field  and input negative number into apr field - error message is appears', function () {
+    CreateNewCreditPage.createNewCredit(
+      creditPageData.negativeNumberApr,
+      creditPageData.emptyCreditLimitField,
+    );
+    browser.waitUntil(
+      () => CreateNewCreditPage.threeErrorsMessage.getText() === errorMessage.threeErrorsMessage,
+    );
+    expect(CreateNewCreditPage.creditLimitFieldBlank.getText()).eq(
+      errorMessage.creditLimitFieldBlank,
+    );
+    expect(CreateNewCreditPage.creditLimitNotNumber.getText()).eq(
+      errorMessage.creditLimitNotNumber,
+    );
+    expect(CreateNewCreditPage.negativeNumberApr.getText()).eq(errorMessage.negativeNumberApr);
+  });
+
+  it('should leave empty apr field  and input not a number into credit limit field - error message is appears', function () {
+    CreateNewCreditPage.createNewCredit(
+      creditPageData.emptyCreditAprField,
+      creditPageData.creditLimitNotNumber,
+    );
+    browser.waitUntil(
+      () => CreateNewCreditPage.threeErrorsMessage.getText() === errorMessage.threeErrorsMessage,
+    );
+    expect(CreateNewCreditPage.aprFieldBlank.getText()).eq(errorMessage.aprFieldBlank);
+    expect(CreateNewCreditPage.aprNotNumber.getText()).eq(errorMessage.aprNotNumber);
+    expect(CreateNewCreditPage.creditLimitNotNumber.getText()).eq(
+      errorMessage.creditLimitNotNumber,
+    );
+  });
 });
