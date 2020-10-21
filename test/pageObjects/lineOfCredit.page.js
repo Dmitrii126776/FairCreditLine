@@ -21,10 +21,6 @@ class LineOfCreditPage extends BasePage {
     return $('[type="submit"]');
   }
 
-  get BackLink() {
-    return $('.line_of_credits.show > a');
-  }
-
   get interestTotal() {
     //return browser.$('//strong[contains(text(),"Interest at 30 days:")]');
     return browser.$('//body/p[5]');
