@@ -8,11 +8,11 @@ describe('CREATE NEW CREDIT LINE', () => {
     CreateNewCreditPage.open();
   });
 
-  it('should verify header of page = New Line Of Credit', function () {
+  it('TC-003 should validate header of page = New Line Of Credit', function () {
     expect(CreateNewCreditPage.header.getText()).eq(creditPageData.header);
   });
 
-  it('should verify that user create new credit line', function () {
+  it('TC-004 should validate that user is able to create a new credit line', function () {
     CreateNewCreditPage.createNewCredit(creditPageData.creditApr, creditPageData.creditLimit);
     browser.waitUntil(
       () =>

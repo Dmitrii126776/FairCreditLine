@@ -8,11 +8,11 @@ describe('TEST HOMEPAGE', () => {
     HomePage.open();
   });
 
-  it('should verify header Home Page = Listing Line Of Credits', function () {
+  it('TC-001 should validate header Home Page = Listing Line Of Credits', function () {
     expect(HomePage.header.getText()).eq(homePageData.header);
   });
 
-  it('should verify user is redirected to the correct page', function () {
+  it('TC-002 should validate user is redirected to the correct page for create a new credit line', function () {
     HomePage.newLineOfCredit();
     browser.waitUntil(() => CreateNewCredit.header.getText() === creditPageData.header);
   });
