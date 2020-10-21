@@ -25,24 +25,6 @@ describe('SCENARIO ONE CREATE CREDIT LINE AND TRACKING TRANSACTIONS', () => {
     browser.waitUntil(() => LineOfCreditPage.transactionsTable.isDisplayed());
   });
 
-  it('should validate that field Interest at 30 days has result $14.38', function () {
-    expect(LineOfCreditPage.interestTotal.getText()).contains(
-      lineOfCreditPageData.interestTotalFirstTransaction,
-    );
-  });
-
-  it('should validate that field Total Payoff at 30 days has result $514.38', function () {
-    expect(LineOfCreditPage.totalPayoff.getText()).contains(
-      lineOfCreditPageData.totalPayoffFirstTransaction,
-    );
-  });
-
-  it('should validate that field Credit Available($500.00) equals amount of transaction', function () {
-    expect(LineOfCreditPage.creditAvailable.getText()).contains(
-      lineOfCreditPageData.amountFirstTransaction,
-    );
-  });
-
   it('should validate day and type of first transaction in Transaction Table', function () {
     expect(LineOfCreditPage.dayFirstTransaction.getText()).eq(
       lineOfCreditPageData.transactionFirstDay,
@@ -66,6 +48,24 @@ describe('SCENARIO ONE CREATE CREDIT LINE AND TRACKING TRANSACTIONS', () => {
   it('should validate interest accrued of first transaction in Transaction Table', function () {
     expect(LineOfCreditPage.interestAccruedFirstTransaction.getText()).eq(
       lineOfCreditPageData.interestAccruedFirstTransaction,
+    );
+  });
+
+  it('should validate that field Interest at 30 days has result $14.38', function () {
+    expect(LineOfCreditPage.interestTotal.getText()).contains(
+      lineOfCreditPageData.interestTotalFirstTransaction,
+    );
+  });
+
+  it('should validate that field Total Payoff at 30 days has result $514.38', function () {
+    expect(LineOfCreditPage.totalPayoff.getText()).contains(
+      lineOfCreditPageData.totalPayoffFirstTransaction,
+    );
+  });
+
+  it('should validate that field Credit Available($500.00) equals amount in Transaction Table($500.00)', function () {
+    expect(LineOfCreditPage.creditAvailable.getText()).contains(
+      lineOfCreditPageData.amountFirstTransaction,
     );
   });
 });
