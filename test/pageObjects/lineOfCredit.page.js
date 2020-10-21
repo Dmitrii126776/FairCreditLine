@@ -22,13 +22,11 @@ class LineOfCreditPage extends BasePage {
   }
 
   get interestTotal() {
-    //return browser.$('//strong[contains(text(),"Interest at 30 days:")]');
     return browser.$('//body/p[5]');
   }
 
   get totalPayoff() {
     return browser.$('//body/p[6]');
-    //return browser.$('//strong[contains(text(),"Total Payoff at 30 days:")]');
   }
 
   get transactionsTable() {
@@ -36,12 +34,10 @@ class LineOfCreditPage extends BasePage {
   }
 
   get dayOfTransaction() {
-    //return browser.$('//th[contains(text(),"Day")]');
     return browser.$('//tbody/tr[1]/td[1]');
   }
 
   get typeOfTransaction() {
-    //return browser.$('//th[contains(text(),"Type")]');
     return browser.$('//tbody/tr[1]/td[2]');
   }
 
@@ -50,12 +46,10 @@ class LineOfCreditPage extends BasePage {
   }
 
   get principalBalanceOfTransaction() {
-    //return browser.$('//th[contains(text(),"Principal Balance")]');
     return browser.$('//tbody/tr[1]/td[4]');
   }
 
   get interestAccruedOfTransaction() {
-    //return browser.$('//th[contains(text(),"Interest Accrued")]');
     return browser.$('//tbody/tr[1]/td[5]');
   }
 

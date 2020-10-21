@@ -26,12 +26,10 @@ describe('SCENARIO ONE CREATE CREDIT LINE AND TRACKING TRANSACTIONS', () => {
   });
 
   it('should ', function () {
-    //LineOfCreditPage.interestTotal.getText() === lineOfCreditPageData.interestTotal,
     expect(LineOfCreditPage.interestTotal.getText()).contains(lineOfCreditPageData.interestTotal);
   });
 
   it('should Payoff', function () {
-    //expect(LineOfCreditPage.totalPayoff.getText()).eq(lineOfCreditPageData.totalPayoff);
     expect(LineOfCreditPage.totalPayoff.getText()).contains(lineOfCreditPageData.totalPayoff);
   });
 
