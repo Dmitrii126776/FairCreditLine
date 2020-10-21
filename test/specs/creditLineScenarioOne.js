@@ -65,7 +65,7 @@ describe('SCENARIO ONE CREATE CREDIT LINE AND TRACKING TRANSACTIONS', () => {
 
   it('should validate that field Credit Available($500.00) equals amount in Transaction Table($500.00)', function () {
     expect(LineOfCreditPage.creditAvailable.getText()).contains(
-      lineOfCreditPageData.amountFirstTransaction,
+      lineOfCreditPageData.principalBalanceFirstTransaction,
     );
   });
 });
