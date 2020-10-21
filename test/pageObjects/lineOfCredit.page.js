@@ -21,7 +21,7 @@ class LineOfCreditPage extends BasePage {
     return $('[type="submit"]');
   }
 
-  get creditAvailable(){
+  get creditAvailable() {
     return browser.$('//body/p[3]');
   }
 
@@ -37,24 +37,44 @@ class LineOfCreditPage extends BasePage {
     return browser.$('#transactions_table');
   }
 
-  get dayOfTransaction() {
+  get dayFirstTransaction() {
     return browser.$('//tbody/tr[1]/td[1]');
   }
 
-  get typeOfTransaction() {
+  get daySecondTransaction() {
+    return browser.$('//tbody/tr[2]/td[1]');
+  }
+
+  get typeFirstTransaction() {
     return browser.$('//tbody/tr[1]/td[2]');
   }
 
-  get amountOfTransaction() {
+  get typeSecondTransaction() {
+    return browser.$('//tbody/tr[2]/td[2]');
+  }
+
+  get amountFirstTransaction() {
     return browser.$('//tbody/tr[1]/td[3]');
   }
 
-  get principalBalanceOfTransaction() {
+  get amountSecondTransaction() {
+    return browser.$('//tbody/tr[2]/td[3]');
+  }
+
+  get principalBalanceFirstTransaction() {
     return browser.$('//tbody/tr[1]/td[4]');
   }
 
-  get interestAccruedOfTransaction() {
+  get principalBalanceSecondTransaction() {
+    return browser.$('//tbody/tr[2]/td[4]');
+  }
+
+  get interestAccruedFirstTransaction() {
     return browser.$('//tbody/tr[1]/td[5]');
+  }
+
+  get interestAccruedSecondTransaction() {
+    return browser.$('//tbody/tr[2]/td[5]');
   }
 
   createTransaction(type, amount, day) {

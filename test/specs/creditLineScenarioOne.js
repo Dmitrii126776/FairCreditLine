@@ -16,50 +16,50 @@ describe('SCENARIO ONE CREATE CREDIT LINE AND TRACKING TRANSACTIONS', () => {
     );
   });
 
-  it('should validate that user is able to draw $500.00 at first day', function () {
+  it('should validate that user is able to draw $500.00 on day 1', function () {
     LineOfCreditPage.createTransaction(
       lineOfCreditPageData.transactionTypeDraw,
-      lineOfCreditPageData.amountDraw,
-      lineOfCreditPageData.transactionDay,
+      lineOfCreditPageData.amountDrawFirstTransaction,
+      lineOfCreditPageData.transactionFirstDay,
     );
     browser.waitUntil(() => LineOfCreditPage.transactionsTable.isDisplayed());
   });
 
-  it('should validate that line interest at 30 days has result $14.38', function () {
-    expect(LineOfCreditPage.interestTotal.getText()).contains(lineOfCreditPageData.interestTotal);
+  it('should validate that field Interest at 30 days has result $14.38', function () {
+    expect(LineOfCreditPage.interestTotal.getText()).contains(lineOfCreditPageData.interestTotalFirstTransaction);
   });
 
-  it('should validate that line total payoff at 30 days has result $514.38', function () {
-    expect(LineOfCreditPage.totalPayoff.getText()).contains(lineOfCreditPageData.totalPayoff);
+  it('should validate that field Total Payoff at 30 days has result $514.38', function () {
+    expect(LineOfCreditPage.totalPayoff.getText()).contains(lineOfCreditPageData.totalPayoffFirstTransaction);
   });
 
-  it('should validate that credit available($500.00) equals amount of transaction', function () {
+  it('should validate that field Credit Available($500.00) equals amount of transaction', function () {
     expect(LineOfCreditPage.creditAvailable.getText()).contains(
-      lineOfCreditPageData.amountOfTransaction,
+      lineOfCreditPageData.amountFirstTransaction,
     );
   });
 
-  it('should validate day and type of first transaction', function () {
-    expect(LineOfCreditPage.dayOfTransaction.getText()).eq(lineOfCreditPageData.transactionDay);
-    expect(LineOfCreditPage.typeOfTransaction.getText()).eq(
+  it('should validate day and type of first transaction in Transaction Table', function () {
+    expect(LineOfCreditPage.dayFirstTransaction.getText()).eq(lineOfCreditPageData.transactionFirstDay);
+    expect(LineOfCreditPage.typeFirstTransaction.getText()).eq(
       lineOfCreditPageData.transactionTypeDraw,
     );
   });
-  it('should validate amount of first transaction', function () {
-    expect(LineOfCreditPage.amountOfTransaction.getText()).eq(
-      lineOfCreditPageData.amountOfTransaction,
+  it('should validate amount of first transaction in Transaction Table', function () {
+    expect(LineOfCreditPage.amountFirstTransaction.getText()).eq(
+      lineOfCreditPageData.amountFirstTransaction,
     );
   });
 
-  it('should validate principal balance of first transaction', function () {
-    expect(LineOfCreditPage.principalBalanceOfTransaction.getText()).eq(
-      lineOfCreditPageData.principalBalance,
+  it('should validate principal balance of first transaction in Transaction Table', function () {
+    expect(LineOfCreditPage.principalBalanceFirstTransaction.getText()).eq(
+      lineOfCreditPageData.principalBalanceFirstTransaction,
     );
   });
 
-  it('should validate interest accrued of first transaction', function () {
-    expect(LineOfCreditPage.interestAccruedOfTransaction.getText()).eq(
-      lineOfCreditPageData.interestAccrued,
+  it('should validate interest accrued of first transaction in Transaction Table', function () {
+    expect(LineOfCreditPage.interestAccruedFirstTransaction.getText()).eq(
+      lineOfCreditPageData.interestAccruedFirstTransaction,
     );
   });
 });
