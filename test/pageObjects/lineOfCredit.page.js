@@ -45,12 +45,20 @@ class LineOfCreditPage extends BasePage {
     return browser.$('//tbody/tr[2]/td[1]');
   }
 
+  get dayThirdTransaction() {
+    return browser.$('//tbody/tr[3]/td[1]');
+  }
+
   get typeFirstTransaction() {
     return browser.$('//tbody/tr[1]/td[2]');
   }
 
   get typeSecondTransaction() {
     return browser.$('//tbody/tr[2]/td[2]');
+  }
+
+  get typeThirdTransaction() {
+    return browser.$('//tbody/tr[3]/td[2]');
   }
 
   get amountFirstTransaction() {
@@ -61,6 +69,10 @@ class LineOfCreditPage extends BasePage {
     return browser.$('//tbody/tr[2]/td[3]');
   }
 
+  get amountThirdTransaction() {
+    return browser.$('//tbody/tr[3]/td[3]');
+  }
+
   get principalBalanceFirstTransaction() {
     return browser.$('//tbody/tr[1]/td[4]');
   }
@@ -69,12 +81,20 @@ class LineOfCreditPage extends BasePage {
     return browser.$('//tbody/tr[2]/td[4]');
   }
 
+  get principalBalanceThirdTransaction() {
+    return browser.$('//tbody/tr[3]/td[4]');
+  }
+
   get interestAccruedFirstTransaction() {
     return browser.$('//tbody/tr[1]/td[5]');
   }
 
   get interestAccruedSecondTransaction() {
     return browser.$('//tbody/tr[2]/td[5]');
+  }
+
+  get interestAccruedThirdTransaction() {
+    return browser.$('//tbody/tr[3]/td[5]');
   }
 
   createTransaction(type, amount, day) {
