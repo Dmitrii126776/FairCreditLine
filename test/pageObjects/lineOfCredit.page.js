@@ -21,6 +21,10 @@ class LineOfCreditPage extends BasePage {
     return $('[type="submit"]');
   }
 
+  get creditAvailable(){
+    return browser.$('//body/p[3]');
+  }
+
   get interestTotal() {
     return browser.$('//body/p[5]');
   }

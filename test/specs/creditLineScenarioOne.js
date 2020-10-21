@@ -16,7 +16,7 @@ describe('SCENARIO ONE CREATE CREDIT LINE AND TRACKING TRANSACTIONS', () => {
     );
   });
 
-  it('should ', function () {
+  it('should validate that user is able to draw $500.00 at first day', function () {
     LineOfCreditPage.createTransaction(
       lineOfCreditPageData.transactionTypeDraw,
       lineOfCreditPageData.amountDraw,
@@ -25,25 +25,39 @@ describe('SCENARIO ONE CREATE CREDIT LINE AND TRACKING TRANSACTIONS', () => {
     browser.waitUntil(() => LineOfCreditPage.transactionsTable.isDisplayed());
   });
 
-  it('should ', function () {
+  it('should validate that line interest at 30 days has result $14.38', function () {
     expect(LineOfCreditPage.interestTotal.getText()).contains(lineOfCreditPageData.interestTotal);
   });
 
-  it('should Payoff', function () {
+  it('should validate that line total payoff at 30 days has result $514.38', function () {
     expect(LineOfCreditPage.totalPayoff.getText()).contains(lineOfCreditPageData.totalPayoff);
   });
 
-  it('should Principal Balance', function () {
+  it('should validate that credit available($500.00) equals amount of transaction', function () {
+    expect(LineOfCreditPage.creditAvailable.getText()).contains(
+      lineOfCreditPageData.amountOfTransaction,
+    );
+  });
+
+  it('should validate day and type of first transaction', function () {
     expect(LineOfCreditPage.dayOfTransaction.getText()).eq(lineOfCreditPageData.transactionDay);
     expect(LineOfCreditPage.typeOfTransaction.getText()).eq(
       lineOfCreditPageData.transactionTypeDraw,
     );
+  });
+  it('should validate amount of first transaction', function () {
     expect(LineOfCreditPage.amountOfTransaction.getText()).eq(
       lineOfCreditPageData.amountOfTransaction,
     );
+  });
+
+  it('should validate principal balance of first transaction', function () {
     expect(LineOfCreditPage.principalBalanceOfTransaction.getText()).eq(
       lineOfCreditPageData.principalBalance,
     );
+  });
+
+  it('should validate interest accrued of first transaction', function () {
     expect(LineOfCreditPage.interestAccruedOfTransaction.getText()).eq(
       lineOfCreditPageData.interestAccrued,
     );
