@@ -16,7 +16,7 @@ describe('SCENARIO TWO CREATE CREDIT LINE AND TRACKING THREE TRANSACTIONS', () =
     );
   });
 
-  it('should validate that user is able to draw $500.00 on day 1', function () {
+  it('TC-013 should validate that user is able to draw $500.00 on day 1', function () {
     LineOfCreditPage.createTransaction(
       lineOfCreditPageData.transactionTypeDraw,
       lineOfCreditPageData.amountDrawFirstTransaction,
@@ -25,7 +25,7 @@ describe('SCENARIO TWO CREATE CREDIT LINE AND TRACKING THREE TRANSACTIONS', () =
     browser.waitUntil(() => LineOfCreditPage.transactionsTable.isDisplayed());
   });
 
-  it('should validate day and type of first transaction in Transaction Table', function () {
+  it('TC-014 should validate day and type of first transaction in Transaction Table', function () {
     expect(LineOfCreditPage.dayFirstTransaction.getText()).eq(
       lineOfCreditPageData.transactionFirstDay,
     );
@@ -33,43 +33,43 @@ describe('SCENARIO TWO CREATE CREDIT LINE AND TRACKING THREE TRANSACTIONS', () =
       lineOfCreditPageData.transactionTypeDraw,
     );
   });
-  it('should validate amount of first transaction in Transaction Table', function () {
+  it('TC-015 should validate amount of first transaction in Transaction Table', function () {
     expect(LineOfCreditPage.amountFirstTransaction.getText()).eq(
       lineOfCreditPageData.amountFirstTransaction,
     );
   });
 
-  it('should validate principal balance of first transaction in Transaction Table', function () {
+  it('TC-016 should validate principal balance of first transaction in Transaction Table', function () {
     expect(LineOfCreditPage.principalBalanceFirstTransaction.getText()).eq(
       lineOfCreditPageData.principalBalanceFirstTransaction,
     );
   });
 
-  it('should validate interest accrued of first transaction in Transaction Table', function () {
+  it('TC-017 should validate interest accrued of first transaction in Transaction Table', function () {
     expect(LineOfCreditPage.interestAccruedFirstTransaction.getText()).eq(
       lineOfCreditPageData.interestAccruedFirstTransaction,
     );
   });
 
-  it('should validate that field Interest at 30 days has result $14.38', function () {
+  it('TC-018 should validate that after first transaction field Interest at 30 days has result $14.38', function () {
     expect(LineOfCreditPage.interestTotal.getText()).contains(
       lineOfCreditPageData.interestTotalFirstTransaction,
     );
   });
 
-  it('should validate that field Total Payoff at 30 days has result $514.38', function () {
+  it('TC-019 should validate that after first transaction field Total Payoff at 30 days has result $514.38', function () {
     expect(LineOfCreditPage.totalPayoff.getText()).contains(
       lineOfCreditPageData.totalPayoffFirstTransaction,
     );
   });
 
-  it('should validate that field Credit Available($500.00) equals Principal Balance in Transaction Table($500.00)', function () {
+  it('TC-020 should validate that after first transaction field Credit Available($500.00) equals Principal Balance in Transaction Table($500.00)', function () {
     expect(LineOfCreditPage.creditAvailable.getText()).contains(
       lineOfCreditPageData.principalBalanceFirstTransaction,
     );
   });
 
-  it('should validate that user is able to do payment $200.00 on day 15', function () {
+  it('TC-021 should validate that user is able to do payment $200.00 on day 15', function () {
     LineOfCreditPage.createTransaction(
       lineOfCreditPageData.transactionTypePayment,
       lineOfCreditPageData.amountPaymentSecondTransaction,
@@ -78,7 +78,7 @@ describe('SCENARIO TWO CREATE CREDIT LINE AND TRACKING THREE TRANSACTIONS', () =
     browser.waitUntil(() => LineOfCreditPage.transactionsTable.isDisplayed());
   });
 
-  it('should validate day and type of second transaction in Transaction Table', function () {
+  it('TC-022 should validate day and type of second transaction in Transaction Table', function () {
     expect(LineOfCreditPage.daySecondTransaction.getText()).eq(
       lineOfCreditPageData.transactionSecondDay,
     );
@@ -87,31 +87,31 @@ describe('SCENARIO TWO CREATE CREDIT LINE AND TRACKING THREE TRANSACTIONS', () =
     );
   });
 
-  it('should validate amount of second transaction in Transaction Table', function () {
+  it('TC-023 should validate amount of second transaction in Transaction Table', function () {
     expect(LineOfCreditPage.amountSecondTransaction.getText()).eq(
       lineOfCreditPageData.amountSecondTransaction,
     );
   });
 
-  it('should validate principal balance of second transaction in Transaction Table', function () {
+  it('TC-024 should validate principal balance of second transaction in Transaction Table', function () {
     expect(LineOfCreditPage.principalBalanceSecondTransaction.getText()).eq(
       lineOfCreditPageData.principalBalanceSecondTransaction,
     );
   });
 
-  it('should validate interest accrued of second transaction in Transaction Table', function () {
+  it('TC-025 should validate interest accrued of second transaction in Transaction Table', function () {
     expect(LineOfCreditPage.interestAccruedSecondTransaction.getText()).eq(
       lineOfCreditPageData.interestAccruedSecondTransaction,
     );
   });
 
-  it('should validate that field Credit Available($300.00) equals Principal Balance in Transaction Table($300.00)', function () {
+  it('TC-026 should validate that after second transaction field Credit Available($300.00) equals Principal Balance in Transaction Table($300.00)', function () {
     expect(LineOfCreditPage.creditAvailable.getText()).contains(
       lineOfCreditPageData.principalBalanceSecondTransaction,
     );
   });
 
-  it('should validate that user is able to draw $100.00 on day 25', function () {
+  it('TC-027 should validate that user is able to draw $100.00 on day 25', function () {
     LineOfCreditPage.createTransaction(
       lineOfCreditPageData.transactionTypeDraw,
       lineOfCreditPageData.amountDrawThirdTransaction,
@@ -120,7 +120,7 @@ describe('SCENARIO TWO CREATE CREDIT LINE AND TRACKING THREE TRANSACTIONS', () =
     browser.waitUntil(() => LineOfCreditPage.transactionsTable.isDisplayed());
   });
 
-  it('should validate day and type of third transaction in Transaction Table', function () {
+  it('TC-028 should validate day and type of third transaction in Transaction Table', function () {
     expect(LineOfCreditPage.dayThirdTransaction.getText()).eq(
       lineOfCreditPageData.transactionThirdDay,
     );
@@ -129,25 +129,25 @@ describe('SCENARIO TWO CREATE CREDIT LINE AND TRACKING THREE TRANSACTIONS', () =
     );
   });
 
-  it('should validate amount of third transaction in Transaction Table', function () {
+  it('TC-029 should validate amount of third transaction in Transaction Table', function () {
     expect(LineOfCreditPage.amountThirdTransaction.getText()).eq(
       lineOfCreditPageData.amountThirdTransaction,
     );
   });
 
-  it('should validate principal balance of third transaction in Transaction Table', function () {
+  it('TC-030 should validate principal balance of third transaction in Transaction Table', function () {
     expect(LineOfCreditPage.principalBalanceThirdTransaction.getText()).eq(
       lineOfCreditPageData.principalBalanceThirdTransaction,
     );
   });
 
-  it('should validate interest accrued of third transaction in Transaction Table', function () {
+  it('TC-031 should validate interest accrued of third transaction in Transaction Table', function () {
     expect(LineOfCreditPage.interestAccruedThirdTransaction.getText()).eq(
       lineOfCreditPageData.interestAccruedThirdTransaction,
     );
   });
 
-  it('should validate that field Credit Available($400.00) equals Principal Balance in Transaction Table($400.00)', function () {
+  it('TC-032 should validate that after third transaction field Credit Available($400.00) equals Principal Balance in Transaction Table($400.00)', function () {
     expect(LineOfCreditPage.creditAvailable.getText()).contains(
       lineOfCreditPageData.principalBalanceThirdTransaction,
     );

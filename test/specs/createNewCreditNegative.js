@@ -6,7 +6,7 @@ describe('NEGATIVE TESTS CREATE NEW CREDIT LINE', () => {
     CreateNewCreditPage.open();
   });
 
-  it('should leave empty credit limit field and empty apr field - error message is appears', function () {
+  it('TC-033 should leave empty Credit limit field and empty Apr field - error message appears', function () {
     CreateNewCreditPage.createNewCredit(
       creditPageData.emptyCreditAprField,
       creditPageData.emptyCreditLimitField,
@@ -24,7 +24,7 @@ describe('NEGATIVE TESTS CREATE NEW CREDIT LINE', () => {
     expect(CreateNewCreditPage.aprNotNumber.getText()).eq(errorMessage.aprNotNumber);
   });
 
-  it('should leave empty credit limit field and input right number into apr field - error message is appears', function () {
+  it('TC-034 should leave empty Credit limit field and input valid number in Apr field - error message appears', function () {
     CreateNewCreditPage.createNewCredit(
       creditPageData.creditApr,
       creditPageData.emptyCreditLimitField,
@@ -40,7 +40,7 @@ describe('NEGATIVE TESTS CREATE NEW CREDIT LINE', () => {
     );
   });
 
-  it('should leave empty apr field  and input right number into credit limit field - error message is appears', function () {
+  it('TC-035 should leave empty Apr field and enter valid number in Credit limit field - error message appears', function () {
     CreateNewCreditPage.createNewCredit(
       creditPageData.emptyCreditAprField,
       creditPageData.creditLimit,
@@ -52,7 +52,7 @@ describe('NEGATIVE TESTS CREATE NEW CREDIT LINE', () => {
     expect(CreateNewCreditPage.aprNotNumber.getText()).eq(errorMessage.aprNotNumber);
   });
 
-  it('should input not a number into apr field and input not a number into credit limit field - error message is appears', function () {
+  it('TC-036 should enter not a number into Apr field and enter not a number into Credit limit field - error message appears', function () {
     CreateNewCreditPage.createNewCredit(
       creditPageData.creditAprNotNumber,
       creditPageData.creditLimitNotNumber,
@@ -66,7 +66,7 @@ describe('NEGATIVE TESTS CREATE NEW CREDIT LINE', () => {
     );
   });
 
-  it('should input right number into apr field and input not a number into credit limit field - error message is appears', function () {
+  it('TC-037 should enter valid number into Apr field and enter not a number into Credit limit field - error message appears', function () {
     CreateNewCreditPage.createNewCredit(
       creditPageData.creditApr,
       creditPageData.creditLimitNotNumber,
@@ -79,7 +79,7 @@ describe('NEGATIVE TESTS CREATE NEW CREDIT LINE', () => {
     );
   });
 
-  it('should input right number into credit limit field and input not a number into apr field - error message is appears', function () {
+  it('TC-038 should enter valid number into Credit limit field and enter not a number into Apr field - error message appears', function () {
     CreateNewCreditPage.createNewCredit(
       creditPageData.creditAprNotNumber,
       creditPageData.creditLimit,
@@ -90,7 +90,7 @@ describe('NEGATIVE TESTS CREATE NEW CREDIT LINE', () => {
     expect(CreateNewCreditPage.aprNotNumber.getText()).eq(errorMessage.aprNotNumber);
   });
 
-  it('should input negative number into apr field and input negative number into credit limit field - error message is appears', function () {
+  it('TC-039 should enter negative number into Apr field and negative number into Credit limit field - error message appears', function () {
     CreateNewCreditPage.createNewCredit(
       creditPageData.negativeNumberApr,
       creditPageData.negativeNumberCreditLimit,
@@ -104,7 +104,7 @@ describe('NEGATIVE TESTS CREATE NEW CREDIT LINE', () => {
     );
   });
 
-  it('should input negative number into apr field and right number into credit limit field - error message is appears', function () {
+  it('TC-040 should enter negative number into Apr field and valid number into Credit limit field - error message appears', function () {
     CreateNewCreditPage.createNewCredit(
       creditPageData.negativeNumberApr,
       creditPageData.creditLimit,
@@ -115,7 +115,7 @@ describe('NEGATIVE TESTS CREATE NEW CREDIT LINE', () => {
     expect(CreateNewCreditPage.negativeNumberApr.getText()).eq(errorMessage.negativeNumberApr);
   });
 
-  it('should input negative number into credit limit field and right number into apr field - error message is appears', function () {
+  it('TC-041 should enter negative number into Credit limit field and valid number into Apr field - error message appears', function () {
     CreateNewCreditPage.createNewCredit(
       creditPageData.creditApr,
       creditPageData.negativeNumberCreditLimit,
@@ -128,7 +128,7 @@ describe('NEGATIVE TESTS CREATE NEW CREDIT LINE', () => {
     );
   });
 
-  it('should leave empty credit limit field  and input negative number into apr field - error message is appears', function () {
+  it('TC-042 should leave empty Credit limit field and enter negative number into Apr field - error message appears', function () {
     CreateNewCreditPage.createNewCredit(
       creditPageData.negativeNumberApr,
       creditPageData.emptyCreditLimitField,
@@ -145,7 +145,7 @@ describe('NEGATIVE TESTS CREATE NEW CREDIT LINE', () => {
     expect(CreateNewCreditPage.negativeNumberApr.getText()).eq(errorMessage.negativeNumberApr);
   });
 
-  it('should leave empty apr field  and input not a number into credit limit field - error message is appears', function () {
+  it('TC-043 should leave empty Apr field  and enter not a number into Credit limit field - error message appears', function () {
     CreateNewCreditPage.createNewCredit(
       creditPageData.emptyCreditAprField,
       creditPageData.creditLimitNotNumber,
